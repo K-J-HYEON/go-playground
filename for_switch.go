@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-func main() {
-	fmt.Println("counting")
+type Vertex struct {
+	X int
+	Y int
+}
 
-	for i := 0; i < 10; i++ {
-		defer fmt.Println(i)
-	}
-	fmt.Println("done")
+func main() {
+	fmt.Println(Vertex{1, 2})
 }
