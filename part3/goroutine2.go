@@ -4,7 +4,7 @@ import "fmt"
 
 func sendData(sendch chan<- int) {
 	sendch <- 10
-	fmt.Println(<- sendch)
+	fmt.Println(<-sendch)
 }
 
 func main() {

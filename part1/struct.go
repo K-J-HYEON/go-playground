@@ -2,17 +2,25 @@ package main
 
 import "fmt"
 
-type Vertex struct {
-	X, Y int
+type A struct {
+	name string
+	num int
 }
 
-var (
-	v1 = Vertex{1, 2}
-	v2 = Vertex{X: 1}
-	v3 = Vertex{}
-	p = &Vertex{1, 2}
-)
+func newA() *A {
+	a := A{}
+	a.name = "hwan"
+	a.num = 10
+
+	return &a
+}
+
+func (a *A) print() {
+	fmt.Println(a)
+}
 
 func main() {
-	fmt.Println(v1, p, v2, v3)
+	a := newA()
+
+	a.print() 
 }
