@@ -2,19 +2,29 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-func compute(fn func(float64, float64) float64) float64 {
-	return fn(3, 4)
+func addNum(slice []int) []int  {
+	slice = append(slice, 4)
+	return slice
 }
 
 func main() {
-	hypot := func(x, y float64) float64 {
-		return math.Sqrt(x*x + y*y)
-	}
+	slice := []int{1, 2, 3}
+	slice = addNum(slice)
 
-	fmt.Println(hypot(5, 12))
-	fmt.Println(compute(hypot))
-	fmt.Println(compute(math.Pow))
+	fmt.Println(slice)
 }
+
+
+
+// func addNum(a, b, c int, /*output*/ slice *[]int) (int, bool, int)  {
+// 	*slice = append(*slice, 4)
+// }
+
+// func main() {
+// 	slice := []int{1, 2, 3}
+// 	addNum(&slice)
+
+// 	fmt.Println(slice)
+// }
