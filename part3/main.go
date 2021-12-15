@@ -2,27 +2,19 @@ package main
 
 import "fmt"
 
-type Stringer interface {
-	String() string
-}
+func sum(nums ...int) int {
+	sum := 0
 
-type Student struct {
-	Name string
-	Age  int
-}
-
-func (s Student) String() string {
-	return fmt.Sprintf("안녕! 나는 %d살 %s라고 해", s.Age, s.Name)
-}
-
-func (s Student) GetAge() int {
-	return s.Age
+	fmt.Printf("nums 타입: %T\n", nums)
+	for _, v := range nums {
+		sum += v
+	}
+	return sum
 }
 
 func main() {
-	student := Student{"제이", 27}
-	var stringer Stringer
-
-	stringer = student
-	fmt.Printf("%s\n", stringer.String())
+	fmt.Println(sum(1, 2, 3, 4, 5))
+	fmt.Println(sum(10, 20))
+	fmt.Println(sum())
+	
 }
