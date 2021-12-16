@@ -8,7 +8,7 @@ type Stringer interface {
 
 type Student struct {
 	Name string
-	Age int
+	Age  int
 }
 
 func (s Student) String() string {
@@ -23,6 +23,6 @@ func main() {
 	student := Student{"철수", 12}
 	var stringer Stringer
 
-	stringer = studet
+	stringer = student
 	fmt.Printf("%s\n", stringer.String())
 }
